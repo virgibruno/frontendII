@@ -1,0 +1,124 @@
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-principal:#E9AFA3;
+    --color-oscuro-texto:#095b64;
+    --color-fondo: #e0ecf5;
+    --color-card: #bfd7ea;
+    --color-internacional: #fef086;
+}
+
+/* ------------------------
+    Header
+------------------------ */
+header {
+    background-color: var(--color-principal);
+    color: var(--color-oscuro-texto);
+    height: 100px;
+    font-size: 30px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ------------------------
+Main
+------------------------ */
+
+main {
+    background-color: var(--color-fondo);
+    min-height: calc(100vh - 200px);
+    
+}
+
+main section#ultimasNoticias h2 {
+    width: 100vw;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-oscuro-texto);
+    margin-top: 25px;
+}
+
+main section#ultimasNoticias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    font-family: 'roboto', sans-serif;
+    height: 500px;
+    width: 350px;
+    background-color: var(--color-card);
+    color: var(--color-oscuro-texto);
+    margin: 40px;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3{
+    text-align: center;
+}
+
+.card h3 a {
+    color: black;
+    text-decoration: none;
+}
+
+.card p {
+    text-align: justify;
+}
+
+.card p:last-child{
+    text-align: end;
+    font-style: italic;
+}
+
+.internacional {
+    background-color: var(--color-internacional);
+}
+
+/* ------------------------
+    Footer
+------------------------ */
+
+footer {
+    height: 100px;
+    background-color: var(--color-principal);
+    color: var(--color-oscuro-texto);
+    position: sticky;
+    bottom: 0;
+}
+
+footer div.redes {
+    position: relative;
+    width: 250px;
+    text-align: center;
+    top: 10px;
+    left: calc(100vw - 300px);
+    font-size: 30px;
+    font-family: 'Nunito', sans-serif;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer a, footer a:visited{
+    color: var(--color-oscuro-texto);
+}
+
+

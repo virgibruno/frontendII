@@ -67,10 +67,11 @@ window.addEventListener("load", ()=>{
         for (btn of btnsMarcarFin) {
             btn.addEventListener("click", e => {
                 let tareaParaMarcar = e.srcElement.nextElementSibling
-                console.log(tareaParaMarcar.innerHTML)
+                console.log(e)
+                console.log(tareaParaMarcar)
                 for (tarea of listadoTodos) {
-                    if (tarea.description == tareaParaMarcar){
-
+                    if (a==b){
+                        console.log("FUNCIONA!")
                     }
                 }
             })

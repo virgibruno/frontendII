@@ -1,0 +1,47 @@
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+
+body {
+    background-color: #eeb868;
+}
+
+h1{
+    text-align: center;
+    color: #456990;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button, input {
+    border-radius: 5px;
+    background-color: #49dcb1;
+    border: none;
+    height: 30px;
+}
+
+#resultados {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#resultados div {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #49beaa;
+    border-radius: 30px;
+    margin: 30px;
+
+}
+
+#resultados div img{
+    max-width: 250px;
+    max-height: 250px;
+}

@@ -60,58 +60,55 @@ const baseDeDatos = `{
 }`;
 
 let consultandoBaseDeDatos = new Promise((resolve, reject) => {
-    // Aquí tenemos una simulación de pedido a una base de datos, con una demora de 2 segundos.
-    // La lógica interna en realidad estará en el servidor y nosotros solo esperariamos una respuesta.
-    setTimeout(function () {
-        if (baseDeDatos == null) {
-            reject({
-                "mensaje": "Base de datos inexistente."
-            });
-        } else {
-            resolve(baseDeDatos);
-        }
-    }, 2000);
-
+  // Aquí tenemos una simulación de pedido a una base de datos, con una demora de 2 segundos.
+  // La lógica interna en realidad estará en el servidor y nosotros solo esperariamos una respuesta.
+  setTimeout(function () {
+    if (baseDeDatos == null) {
+      reject({
+        mensaje: "Base de datos inexistente.",
+      });
+    } else {
+      resolve(baseDeDatos);
+    }
+  }, 2000);
 });
 
 // Aquí realizamos un la consulta de la promesa, esperando su respuesta asíncrona
 consultandoBaseDeDatos
-    .then((respuesta) => {
-        renderizarDatosUsuario(respuesta)
-    })
-    .catch((err) => {
-        console.log(err);
-    })
+  .then((respuesta) => {
+    renderizarDatosUsuario(respuesta);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
 ;
-    
-tarjeta = document.querySelector(".tarjeta")
+
+tarjeta = document.querySelector(".tarjeta");
 
 function nuevaTarjeta(urlFoto, nombreCompleto, mail) {
-    tarjeta.innerHTML = `
+  tarjeta.innerHTML = `
         <img src="${urlFoto}">
         <div>
             <p> ${nombreCompleto}</p>
             <p>Email: ${mail}</p>
         </div>
-    `
+    `;
 }
 
 function renderizarDatosUsuario(datos) {
-    /* -------------------------------- CONSIGNA -------------------------------- */
-    // Aquí deben desarrollar una función que muestre en pantalla:
-    // la foto, el nombre completo del usuario y su email.
-    // Esto debe estar basado en la info que nos llega e insertarse en el HTML.
-    // Tip: pueden manipular el CSS y estructurar la tarjeta a su gusto.
-    datosJS = JSON.parse(datos).results[0]
+  /* -------------------------------- CONSIGNA -------------------------------- */
+  // Aquí deben desarrollar una función que muestre en pantalla:
+  // la foto, el nombre completo del usuario y su email.
+  // Esto debe estar basado en la info que nos llega e insertarse en el HTML.
+  // Tip: pueden manipular el CSS y estructurar la tarjeta a su gusto.
+  datosJS = JSON.parse(datos).results[0];
 
+  const urlFoto = datosJS.picture.large;
+  let nombreCompleto = "";
+  for (nombre in datosJS.name) {
+    nombreCompleto += datosJS.name[nombre] + " ";
+  }
+  const mail = datosJS.email;
 
-    const urlFoto = datosJS.picture.large;
-    let nombreCompleto =""; 
-    for (nombre in datosJS.name) {
-        nombreCompleto += datosJS.name[nombre] + " ";
-    }
-    const mail = datosJS.email;
-
-    nuevaTarjeta(urlFoto, nombreCompleto, mail)
-
+  nuevaTarjeta(urlFoto, nombreCompleto, mail);
 }
